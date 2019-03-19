@@ -1,1 +1,1 @@
-# Visualizing-Algorithms
+Visualizing various sorting algorithms using pygame.
