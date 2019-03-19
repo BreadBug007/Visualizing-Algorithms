@@ -33,6 +33,9 @@ while True:
             if values[index] > values[j]:
                 index = j
         values[k], values[index] = values[index], values[k]
+    else:
+        py.time.delay(1000)
+        break
     k += 1
 
     for i in range(length):
