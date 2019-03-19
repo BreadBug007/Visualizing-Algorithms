@@ -12,8 +12,6 @@ py.display.set_caption("Selection Sort")
 
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
-RED = (255, 0, 0)
-GREEN = (0, 255, 0)
 
 values = np.zeros((length,))
 for i in range(length):
