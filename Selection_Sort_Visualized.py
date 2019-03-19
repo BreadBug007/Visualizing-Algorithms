@@ -3,18 +3,12 @@ import random
 import numpy as np
 
 
-def manual_sort(array, a):
-    if array[a] < array[a+1]:
-        array[a], array[a+1] = array[a+1], array[a]
-    return array
-
-
 py.init()
 
 length, height = 1200, 600
 size = (length, height)
 screen = py.display.set_mode(size)
-py.display.set_caption("Visualizing Algorithms")
+py.display.set_caption("Selection Sort")
 
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
