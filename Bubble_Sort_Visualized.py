@@ -3,7 +3,7 @@ import random
 import numpy as np
 
 
-def bubble(arr, k):
+def bubble_sort(arr, k):
     for j in range(length - k - 1):
         a, b = arr[j], arr[j + 1]
         if a > b:
@@ -43,7 +43,7 @@ while True:
     screen.fill(BLACK)
 
     if k < length:
-        bubble(values, k)
+        bubble_sort(values, k)
     else:
         py.time.delay(1000)
         break

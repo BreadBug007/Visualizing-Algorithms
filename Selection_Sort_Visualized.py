@@ -3,7 +3,7 @@ import random
 import numpy as np
 
 
-def selection(arr, k):
+def selection_sort(arr, k):
     index = k
     for j in range(k + 1, length):
         if arr[index] > arr[j]:
@@ -42,7 +42,7 @@ while True:
     screen.fill(BLACK)
 
     if k < length:
-        selection(values, k)
+        selection_sort(values, k)
     else:
         py.time.delay(1000)
         break
