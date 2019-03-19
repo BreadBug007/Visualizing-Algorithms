@@ -3,12 +3,26 @@ import random
 import numpy as np
 
 
+def selection(arr, k):
+    index = k
+    for j in range(k + 1, length):
+        if arr[index] > arr[j]:
+            index = j
+    arr[k], arr[index] = arr[index], arr[k]
+    return display_arr(arr)
+
+
+def display_arr(arr):
+    for i in range(length):
+        py.draw.line(screen, WHITE, [i, height], [i, height - arr[i]])
+
+
 py.init()
 
 length, height = 1200, 600
 size = (length, height)
 screen = py.display.set_mode(size)
-py.display.set_caption("Selection Sort")
+py.display.set_caption("Bubble Sort")
 
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
@@ -28,16 +42,10 @@ while True:
     screen.fill(BLACK)
 
     if k < length:
-        index = k
-        for j in range(k+1, length):
-            if values[index] > values[j]:
-                index = j
-        values[k], values[index] = values[index], values[k]
+        selection(values, k)
     else:
         py.time.delay(1000)
         break
     k += 1
 
-    for i in range(length):
-        py.draw.line(screen, WHITE, [i, height], [i, height - values[i]])
     py.display.update()

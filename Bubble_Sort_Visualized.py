@@ -3,6 +3,21 @@ import random
 import numpy as np
 
 
+def bubble(arr, k):
+    for j in range(length - k - 1):
+        a, b = arr[j], arr[j + 1]
+        if a > b:
+            a, b = b, a
+            arr[j] = a
+            arr[j + 1] = b
+    return display_arr(arr)
+
+
+def display_arr(arr):
+    for i in range(length):
+        py.draw.line(screen, WHITE, [i, height], [i, height - arr[i]])
+
+
 py.init()
 
 length, height = 1200, 600
@@ -28,17 +43,10 @@ while True:
     screen.fill(BLACK)
 
     if k < length:
-        for j in range(length - k - 1):
-            a, b = values[j], values[j+1]
-            if a > b:
-                a, b = b, a
-                values[j] = a
-                values[j+1] = b
+        bubble(values, k)
     else:
         py.time.delay(1000)
         break
     k += 1
 
-    for i in range(length):
-        py.draw.line(screen, WHITE, [i, height], [i, height - values[i]])
     py.display.update()
